@@ -1,7 +1,7 @@
 // SignupContainer.tsx
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { RootState } from '../reducers/rootReducer'; // Define RootState as needed
+import { RootState } from '../store/rootReducer'; // Define RootState as needed
 import { signupRequest, SignupRequestAction } from '../actions/signupActions';
 import SignupForm from '../components/signup/SignupForm';
 

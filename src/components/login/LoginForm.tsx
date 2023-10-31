@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loginRequest } from '../../actions/loginActions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const LoginForm: React.FC = () => {
+const LoginForm: React.FC = (props) => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const dispatch = useDispatch();
 
@@ -18,8 +18,11 @@ const LoginForm: React.FC = () => {
 
     // Dispatch the loginRequest action to trigger the loginSaga
     dispatch(loginRequest(formData));
+    // props.loginRequest(formData)
   };
 
+  console.log(props);
+  
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-group">

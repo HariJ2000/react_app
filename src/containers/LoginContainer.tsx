@@ -6,7 +6,9 @@ import LoginForm from '../components/login/LoginForm'; // Import the LoginForm c
 import { loginRequest, LoginRequestAction } from '../actions/loginActions'; // Import the login actions
 
 interface StateProps {
-  // Define your state props as needed
+  user: any | null; // Define the type of 'user' based on your actual state structure
+  loading: boolean;
+  error: string | null;
 }
 
 interface DispatchProps {
@@ -14,7 +16,9 @@ interface DispatchProps {
 }
 
 const mapStateToProps = (state: RootState): StateProps => ({
-  // Map state props here
+  user: state.login.user,
+  loading: state.login.loading,
+  error: state.login.error,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({

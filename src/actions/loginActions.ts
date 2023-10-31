@@ -1,5 +1,6 @@
 // loginActions.ts
 import { Action } from 'redux';
+import { createAction } from '@reduxjs/toolkit';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -17,4 +18,5 @@ export const loginRequest = (credentials: { username: string; password: string }
   payload: credentials,
 });
 
-
+export const loginSuccess = createAction<any>(LOGIN_SUCCESS); // Define your user type instead of 'any'
+export const loginFailure = createAction<any>(LOGIN_FAILURE);

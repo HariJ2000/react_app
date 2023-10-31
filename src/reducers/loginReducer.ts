@@ -1,5 +1,9 @@
-// reducers/loginReducer.ts
-import { createSlice } from '@reduxjs/toolkit';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/loginActions';
+
+type Action = {
+  type: string;
+  payload?: any; // Payload can be of any type
+};
 
 interface LoginState {
   user: any; // Define your user type
@@ -7,32 +11,37 @@ interface LoginState {
   error: any;
 }
 
-const initialState: LoginState = {
+const initialState:LoginState = {
   user: null,
   loading: false,
   error: null,
 };
 
-const loginSlice = createSlice({
-  name: 'login',
-  initialState,
-  reducers: {
-    loginRequest: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
-    loginSuccess: (state, action) => {
-      state.user = action.payload;
-      state.loading = false;
-    },
-    loginFailure: (state, action) => {
-      state.user = null;
-      state.loading = false;
-      state.error = action.payload;
-    },
-  },
-});
+const loginReducer = (state = initialState, action:Action) => {
+  switch (action.type) {
+    case LOGIN_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        loading: false,
+        error: null,
+      };
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        user: null,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
-export const { loginRequest, loginSuccess, loginFailure } = loginSlice.actions;
-
-export default loginSlice.reducer;
+export default loginReducer;
