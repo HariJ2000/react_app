@@ -66,18 +66,10 @@ describe('Login Component', () => {
       fireEvent.click(getByText('Login'));
     })
 
-    // // Expect the login action to be dispatched
-    // const expectedActions = [
-    //   loginRequest({ username: 'testuser', password: 'password123' }),
-    //   loginSuccess({user:"hari",role:'developer'})
-    // ];
-    // expect(store.getActions()).toEqual(expectedActions);
-
-    // // Get the updated state from the store
-    // const updatedState = store.getState();
-
-    // // Check if the state is updated as expected
-    // expect(updatedState.login.user.user).toBe('hari');
-    // expect(updatedState.login.user.role).toBe('developer');
+    // Expect the login action to be dispatched
+    const expectedActions = [
+      loginRequest({ username: 'testuser', password: 'password123' })
+    ];
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });

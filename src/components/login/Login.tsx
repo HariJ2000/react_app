@@ -13,9 +13,9 @@ const Login: React.FC = () => {
             <div className="card-header">Login</div>
             <div className="card-body">
               <LoginContainer /> {/* Use the LoginContainer component here */}
-              <Link to="/signup" className="btn btn-link">
+              {/* <Link to="/signup" className="btn btn-link">
                 Sign Up
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
