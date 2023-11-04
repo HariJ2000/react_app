@@ -15,6 +15,7 @@ const initialState: RootState = {
     error: null
   }
 };
+
 const store = mockStore(initialState); // Create a mock store
 
 describe('Login Component', () => {
