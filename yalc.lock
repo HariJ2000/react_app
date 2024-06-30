@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "my-custom-library": {
+      "version": "1.0.0",
+      "signature": "f6697da8681aaef35301cb2d6a65e919",
+      "file": true
+    }
+  }
+}

@@ -1,12 +1,14 @@
 // components/login/Login.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {ExampleComponent} from 'my-custom-library'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginContainer from '../../containers/LoginContainer'; // Import the LoginContainer component
 
 const Login: React.FC = () => {
   return (
     <div className="container mt-5">
+      <ExampleComponent text = "text"/>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
